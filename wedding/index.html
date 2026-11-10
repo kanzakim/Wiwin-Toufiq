@@ -1,0 +1,696 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#401B20">
+  <meta name="description" content="Undangan pernikahan Wiwin & Toufiq, Minggu 6 Desember 2026.">
+  <title>The Wedding of Wiwin &amp; Toufiq</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --wine: #401B20;
+      --rose: #C18C91;
+      --cream: #F5E5E2;
+      --gold: #C5A06B;
+      --ink: #39282a;
+      --paper: #fffaf8;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Lora, serif;
+      line-height: 1.75;
+    }
+
+    button, a { font: inherit; }
+
+    .script { font-family: "Great Vibes", cursive; }
+    .serif { font-family: "Cormorant Garamond", serif; }
+
+    .cover {
+      min-height: 100svh;
+      position: relative;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: #fff;
+      background:
+        linear-gradient(180deg, rgba(25,12,14,.52), rgba(35,13,17,.72)),
+        url("assets/foto-pasangan.jpg") center 38%/cover no-repeat;
+      padding: 35px 20px;
+    }
+
+    .cover:before {
+      content: "";
+      position: absolute;
+      inset: 15px;
+      border: 1px solid rgba(197,160,107,.8);
+      pointer-events: none;
+    }
+
+    .cover-content {
+      position: relative;
+      max-width: 700px;
+      animation: rise 1.2s ease both;
+    }
+
+    .eyebrow {
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      font-size: .72rem;
+      color: #f4d9d2;
+    }
+
+    .cover h1 {
+      font-weight: 400;
+      font-size: clamp(4rem,12vw,8rem);
+      line-height: 1.02;
+      margin: 18px 0;
+      color: #fff;
+      text-shadow: 0 4px 22px #1b0d10;
+    }
+
+    .cover h1 span {
+      display: block;
+      font-size: .55em;
+      margin: 4px 0;
+    }
+
+    .cover-date {
+      letter-spacing: .2em;
+      font-size: .85rem;
+      margin: 18px 0 30px;
+    }
+
+    .gold-line {
+      width: 90px;
+      height: 1px;
+      background: var(--gold);
+      margin: 22px auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 25px;
+      border: 1px solid var(--gold);
+      background: var(--wine);
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: .08em;
+      font-size: .8rem;
+      transition: .25s;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: var(--gold);
+      color: var(--wine);
+      transform: translateY(-2px);
+    }
+
+    .btn.light {
+      background: transparent;
+      color: var(--wine);
+    }
+
+    .btn.light:hover {
+      background: var(--wine);
+      color: white;
+    }
+
+    section {
+      padding: 90px 20px;
+      scroll-margin-top: 30px;
+    }
+
+    .section-inner {
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .kicker {
+      color: var(--rose);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      font-size: .68rem;
+    }
+
+    h2 {
+      font: 500 clamp(2.4rem,6vw,4rem)/1.1 "Cormorant Garamond",serif;
+      color: var(--wine);
+      margin: 12px 0 22px;
+    }
+
+    .intro {
+      background: linear-gradient(135deg,#fffaf8,var(--cream));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro:before, .intro:after {
+      content: "❧";
+      position: absolute;
+      color: rgba(193,140,145,.22);
+      font-size: 9rem;
+      line-height: 1;
+    }
+
+    .intro:before { top: 15px; left: 3%; }
+
+    .intro:after {
+      bottom: 5px;
+      right: 4%;
+      transform: rotate(180deg);
+    }
+
+    .intro .section-inner {
+      max-width: 720px;
+      position: relative;
+    }
+
+    .arabic {
+      font-size: 1.15rem;
+      color: var(--wine);
+      margin: 18px 0;
+    }
+
+    .intro p { font-size: .95rem; }
+
+    .couple { background: var(--paper); }
+
+    .couple-photo {
+      width: min(100%,440px);
+      height: 470px;
+      object-fit: cover;
+      object-position: center 35%;
+      border: 7px solid #fff;
+      outline: 1px solid var(--gold);
+      box-shadow: 0 14px 45px rgba(64,27,32,.13);
+      margin: 20px auto 35px;
+    }
+
+    .names {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 28px;
+      align-items: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .person h3 {
+      font: 400 clamp(2.2rem,5vw,3.5rem)/1.1 "Great Vibes",cursive;
+      color: var(--wine);
+      margin: 8px 0;
+    }
+
+    .person p { font-size: .88rem; margin: 0; }
+
+    .amp {
+      font: 400 3rem "Great Vibes",cursive;
+      color: var(--gold);
+    }
+
+    .countdown {
+      background: var(--wine);
+      color: #fff;
+    }
+
+    .countdown h2 { color: #fff; }
+    .countdown .kicker { color: #e3bfc0; }
+
+    .timer {
+      display: flex;
+      justify-content: center;
+      gap: clamp(10px,4vw,35px);
+      flex-wrap: wrap;
+      margin-top: 35px;
+    }
+
+    .timebox {
+      min-width: 75px;
+      padding: 18px 12px;
+      border-top: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+    }
+
+    .timebox strong {
+      display: block;
+      font: 500 clamp(2.2rem,6vw,3.4rem) "Cormorant Garamond",serif;
+      color: #f2d9b9;
+      line-height: 1.1;
+    }
+
+    .timebox span {
+      font-size: .65rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #f2dfe0;
+    }
+
+    .events { background: #fff; }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 22px;
+      margin-top: 38px;
+    }
+
+    .event-card {
+      padding: 35px 25px;
+      border: 1px solid rgba(197,160,107,.7);
+      background: linear-gradient(145deg,#fff,#fff8f6);
+      position: relative;
+    }
+
+    .event-card:before {
+      content: "✦";
+      display: block;
+      color: var(--gold);
+      font-size: 1.2rem;
+    }
+
+    .event-card h3 {
+      font: 500 2rem "Cormorant Garamond",serif;
+      color: var(--wine);
+      margin: 8px;
+    }
+
+    .event-card p { margin: 5px; font-size: .9rem; }
+
+    .location { background: var(--cream); }
+
+    .address {
+      max-width: 620px;
+      margin: 0 auto 25px;
+    }
+
+    .address p { margin: 4px; }
+
+    .rsvp { background: #fff; }
+
+    .rsvp p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+    }
+
+    .closing {
+      background: linear-gradient(180deg,var(--cream),#fffaf8);
+      padding-bottom: 55px;
+    }
+
+    .closing .script {
+      font-size: clamp(3.5rem,9vw,6rem);
+      color: var(--wine);
+      line-height: 1.2;
+    }
+
+    footer {
+      background: var(--wine);
+      color: #e9d7d4;
+      text-align: center;
+      padding: 18px;
+      font-size: .72rem;
+      letter-spacing: .08em;
+    }
+
+    .music {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 10;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+      background: var(--wine);
+      color: #fff;
+      box-shadow: 0 5px 18px #401b2033;
+      cursor: pointer;
+      font-size: 1.15rem;
+    }
+
+    .music[aria-pressed="true"] {
+      background: var(--gold);
+      color: var(--wine);
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 8;
+      display: flex;
+      justify-content: center;
+      gap: clamp(10px,3vw,28px);
+      padding: 11px 8px;
+      background: rgba(64,27,32,.94);
+      backdrop-filter: blur(8px);
+      transform: translateY(-110%);
+      transition: .35s;
+    }
+
+    .nav.visible { transform: translateY(0); }
+
+    .nav a {
+      font-size: .68rem;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: .08em;
+    }
+
+    .nav a:hover { color: #e6c28e; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .8s ease,transform .8s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: none;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    @media(max-width:650px) {
+      section { padding: 70px 18px; }
+      .cover { background-position: 53% center; }
+      .names { grid-template-columns: 1fr; gap: 8px; }
+      .amp { font-size: 2.2rem; }
+      .couple-photo { height: 390px; }
+      .event-grid { grid-template-columns: 1fr; }
+      .nav { gap: 13px; }
+      .nav a { font-size: .58rem; }
+      .intro:before,.intro:after { font-size: 5rem; }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      html { scroll-behavior: auto; }
+      *,*:before,*:after {
+        animation: none !important;
+        transition: none !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav" id="nav" aria-label="Navigasi undangan">
+    <a href="#home">HOME</a>
+    <a href="#mempelai">MEMPELAI</a>
+    <a href="#acara">ACARA</a>
+    <a href="#lokasi">LOKASI</a>
+    <a href="#rsvp">RSVP</a>
+  </nav>
+
+  <header class="cover" id="home">
+    <div class="cover-content">
+      <div class="eyebrow">The Wedding Of</div>
+      <h1 class="script">Wiwin <span>&amp;</span> Toufiq</h1>
+      <div class="gold-line"></div>
+      <div class="cover-date">MINGGU · 06 DESEMBER 2026</div>
+      <button class="btn" id="openInvite" type="button">
+        ✧ &nbsp; BUKA UNDANGAN
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="intro" id="pembukaan">
+      <div class="section-inner reveal">
+        <div class="kicker">Dengan memohon rahmat dan ridho Allah SWT</div>
+        <h2>Assalamu'alaikum<br>Warahmatullahi Wabarakatuh</h2>
+        <div class="gold-line"></div>
+        <p class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+        <p>Dengan penuh rasa syukur, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada hari bahagia pernikahan kami.</p>
+        <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Anda berkenan hadir untuk berbagi kebahagiaan bersama.</p>
+      </div>
+    </section>
+
+    <section class="couple" id="mempelai">
+      <div class="section-inner reveal">
+        <div class="kicker">Kedua mempelai</div>
+        <h2>With Love</h2>
+
+        <img class="couple-photo"
+             src="assets/foto-pasangan.jpg"
+             alt="Foto Wiwin dan Toufiq"
+             loading="lazy">
+
+        <div class="names">
+          <div class="person">
+            <div class="kicker">Mempelai wanita</div>
+            <h3>Wiwin Yuniar</h3>
+            <p>Putri keempat dari<br>(Alm.) Sarbini &amp; Jueriah</p>
+          </div>
+
+          <div class="amp">&amp;</div>
+
+          <div class="person">
+            <div class="kicker">Mempelai pria</div>
+            <h3>Toufiqurahman</h3>
+            <p>Putra pertama dari<br>Suherman &amp; Suryati</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="countdown" id="countdown">
+      <div class="section-inner reveal">
+        <div class="kicker">Menuju hari bahagia</div>
+        <h2>Counting The Days</h2>
+        <p>06 Desember 2026 · Pukul 08.00 WIB</p>
+
+        <div class="timer" aria-live="off">
+          <div class="timebox"><strong id="days">--</strong><span>Hari</span></div>
+          <div class="timebox"><strong id="hours">--</strong><span>Jam</span></div>
+          <div class="timebox"><strong id="minutes">--</strong><span>Menit</span></div>
+          <div class="timebox"><strong id="seconds">--</strong><span>Detik</span></div>
+        </div>
+
+        <p id="countdownMessage" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="events" id="acara">
+      <div class="section-inner reveal">
+        <div class="kicker">Save the date</div>
+        <h2>Wedding Event</h2>
+        <p>InsyaAllah akan diselenggarakan pada:</p>
+
+        <div class="event-grid">
+          <article class="event-card">
+            <h3>Akad Nikah</h3>
+            <p><strong>Minggu, 6 Desember 2026</strong></p>
+            <p>Pukul 08.00 WIB – selesai</p>
+          </article>
+
+          <article class="event-card">
+            <h3>Resepsi</h3>
+            <p><strong>Minggu, 6 Desember 2026</strong></p>
+            <p>Pukul 11.00 WIB – selesai</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="location" id="lokasi">
+      <div class="section-inner reveal">
+        <div class="kicker">Dengan segala hormat</div>
+        <h2>Lokasi Acara</h2>
+
+        <div class="address">
+          <p><strong>Jl. H. Syamsudin, Kp. Rawa Bebek</strong></p>
+          <p>RT 02/RW 10 No. 92</p>
+          <p>Kel. Kota Baru, Kec. Bekasi Barat</p>
+        </div>
+
+        <a class="btn light"
+           href="https://maps.app.goo.gl/KXYaKzoa8G8aCXqz5"
+           target="_blank"
+           rel="noopener noreferrer">
+          LIHAT GOOGLE MAPS ↗
+        </a>
+      </div>
+    </section>
+
+    <section class="rsvp" id="rsvp">
+      <div class="section-inner reveal">
+        <div class="kicker">Kehadiran Anda</div>
+        <h2>Konfirmasi Kehadiran</h2>
+
+        <p>Merupakan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir. Mohon luangkan waktu sejenak untuk mengisi formulir konfirmasi kehadiran melalui tombol berikut.</p>
+
+        <a class="btn"
+           id="rsvpButton"
+           href="https://docs.google.com/forms/d/e/1FAIpQLSf8s4a8omvGUcAsKU4TO6RnV_8OQ-8AFqBlsLDdEFgBZadmyQ/viewform"
+           target="_blank"
+           rel="noopener noreferrer">
+          KONFIRMASI KEHADIRAN ↗
+        </a>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="section-inner reveal">
+        <div class="kicker">Terima kasih</div>
+        <h2>Doa &amp; Restu</h2>
+
+        <p>Merupakan suatu kebahagiaan dan kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir serta memberikan doa restu.</p>
+
+        <p>Semoga Allah SWT senantiasa melimpahkan keberkahan, kasih sayang, dan kebahagiaan dalam setiap langkah kehidupan kami.</p>
+
+        <div class="gold-line"></div>
+        <div class="script">Wiwin &amp; Toufiq</div>
+        <p>Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    THE WEDDING OF WIWIN &amp; TOUFIQ · 06.12.2026
+  </footer>
+
+  <audio id="backgroundMusic"
+         src="assets/musik-klasik.mp3"
+         preload="none"
+         loop></audio>
+
+  <button class="music"
+          id="musicToggle"
+          type="button"
+          aria-label="Putar musik"
+          aria-pressed="false"
+          title="Putar / jeda musik">♫</button>
+
+  <script>
+    // Countdown menuju hari pernikahan
+    const targetDate = new Date("2026-12-06T08:00:00+07:00").getTime();
+
+    const pad = n => String(n).padStart(2, "0");
+
+    function updateCountdown() {
+      const distance = targetDate - Date.now();
+
+      if (distance <= 0) {
+        ["days", "hours", "minutes", "seconds"].forEach(id => {
+          document.getElementById(id).textContent = "00";
+        });
+
+        document.getElementById("countdownMessage").textContent =
+          "Hari bahagia telah tiba. Terima kasih atas doa dan restunya.";
+        return;
+      }
+
+      document.getElementById("days").textContent =
+        Math.floor(distance / 86400000);
+
+      document.getElementById("hours").textContent =
+        pad(Math.floor(distance % 86400000 / 3600000));
+
+      document.getElementById("minutes").textContent =
+        pad(Math.floor(distance % 3600000 / 60000));
+
+      document.getElementById("seconds").textContent =
+        pad(Math.floor(distance % 60000 / 1000));
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Pengaturan musik
+    const music = document.getElementById("backgroundMusic");
+    const musicToggle = document.getElementById("musicToggle");
+
+    function setMusicPlaying(isPlaying) {
+      musicToggle.textContent = isPlaying ? "Ⅱ" : "♫";
+      musicToggle.setAttribute("aria-pressed", String(isPlaying));
+      musicToggle.setAttribute(
+        "aria-label",
+        isPlaying ? "Jeda musik" : "Putar musik"
+      );
+    }
+
+    musicToggle.addEventListener("click", async () => {
+      try {
+        if (music.paused) {
+          await music.play();
+          setMusicPlaying(true);
+        } else {
+          music.pause();
+          setMusicPlaying(false);
+        }
+      } catch (error) {
+        alert("Musik belum dapat diputar. Pastikan file assets/musik-klasik.mp3 tersedia.");
+      }
+    });
+
+    music.addEventListener("ended", () => setMusicPlaying(false));
+
+    // Tombol buka undangan sekaligus memulai musik
+    const nav = document.getElementById("nav");
+
+    document.getElementById("openInvite").addEventListener("click", async () => {
+      document.getElementById("pembukaan").scrollIntoView({
+        behavior: "smooth"
+      });
+
+      nav.classList.add("visible");
+
+      try {
+        await music.play();
+        setMusicPlaying(true);
+      } catch (error) {
+        setMusicPlaying(false);
+      }
+    });
+
+    // Navigasi muncul saat halaman digulir
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("visible", window.scrollY > 500);
+    }, { passive: true });
+
+    // Animasi saat bagian halaman terlihat
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
